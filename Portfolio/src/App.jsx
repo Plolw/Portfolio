@@ -1,19 +1,36 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Header } from './components/Header';
+import { Canvas } from '@react-three/fiber';
+import Particles from './Particles';
+import Home from './pages/Home';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import AboutMe from './pages/AboutMe';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
-    <div id="canvas-container" className='App'>
-      <Canvas shadows>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="white" position={[0, 0, 5]} />
-        <mesh rotation={[Math.PI / 8, 10, 10]}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial />
-        </mesh>
-        <OrbitControls />
-      </Canvas>
-    </div>
+    <BrowserRouter>
+      <div className="container mx-auto px-10 md:px-0 pb-10 md:pb-0 w-full h-full">
+        <Header />
+        <div className="relative z-10 w-full h-full">
+          <Home />
+          <Skills />
+          <Projects />
+          <AboutMe />
+          <Contact />
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <Canvas>
+            <mesh>
+              <ambientLight intensity={0.5} />
+              <Particles />
+            </mesh>
+          </Canvas>
+        </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
