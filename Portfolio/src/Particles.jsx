@@ -18,7 +18,7 @@ const Particles = () => {
                 <bufferAttribute
                     attach="attributes-position"
                     array={particles}
-                    count={70}
+                    count={100}
                     itemSize={3}
                 />
             </bufferGeometry>

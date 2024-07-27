@@ -17,8 +17,10 @@ const App = () => {
     const handleMouseMove = (e) => {
       const homeElement = homeRef.current;
       const rect = homeElement.getBoundingClientRect();
-      const offsetX = (e.clientX - rect.left - rect.width / 2) * 0.005;
-      const offsetY = (e.clientY - rect.top - rect.height / 2) * 0.005;
+      const offsetX = (rect.left + rect.width - e.clientX / 2) * 0.013;
+      const offsetY = (rect.top + rect.height - e.clientY / 2) * 0.013;
+
+      console.log(offsetX);
 
       homeElement.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     };

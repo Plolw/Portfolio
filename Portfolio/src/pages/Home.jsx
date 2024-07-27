@@ -3,27 +3,24 @@ import { styles } from '../style';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const Home = () => {
-    /* const homeRef = useRef(null);
+    const [height, setHeight] = useState('100%');
+    const [width, setWidth] = useState('1rem');
 
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            const homeElement = homeRef.current;
-            const rect = homeElement.getBoundingClientRect();
-            const offsetX = (e.clientX - rect.left - rect.width / 2) * 0.02;
-            const offsetY = (e.clientY - rect.top - rect.height / 2) * 0.02;
+    const handleMouseEnter = () => {
+        setHeight('100%');
+        setWidth('1.25rem');
+    };
 
-            homeElement.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []); */
+    const handleMouseLeave = () => {
+        setHeight('85%');
+        setWidth('1rem');
+    };
 
     return (
-        <div /* ref={homeRef} */ className='flex flex-col w-full h-full m-10'>
+        <div className='flex flex-col w-full h-full m-10'>
             <div className='text-6xl w-3/5 relative z-10'>
                 I'm Pol, a
                 <span className='relative inline-block mx-2'>
@@ -71,14 +68,23 @@ const Home = () => {
                         </mesh>
                     </Canvas>
                 </div>
-                <div className='self-center w-2/5 mt-32 ml-20 flex flex-row gap-10'>
+                <div
+                    className='self-center w-2/5 mt-32 ml-20 flex flex-row gap-10'
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
                     <div className='flex flex-col items-center'>
-                        <div className='bg-primary rounded-sm w-4 h-4'></div>
+                        <motion.div
+                            className='bg-primary rounded-sm w-4 h-4'
+                            initial={{ height: width, width: width }}
+                            animate={{ height: width, width: width }}
+                            transition={{ duration: 0.4 }}
+                        />
                         <motion.div
                             className='bg-primary w-0.5 h-96'
                             initial={{ height: '0%' }}
-                            animate={{ height: ['0%', '100%'] }}
-                            transition={{ duration: 0.6 }}
+                            animate={{ height: height }}
+                            transition={{ duration: 0.4 }}
                         />
                     </div>
                     <div className='flex flex-col'>
