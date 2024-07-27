@@ -9,13 +9,13 @@ const styles = {
         "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
 
     descText:
-        "text-lg text-white tracking-wider leading-loose",
+        "text-2xl text-white tracking-wider leading-loose",
     smallHeaderText:
         "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
 
     headerItem: "text-lg transition hover:text-primary",
 
-    normalButton: "bg-primary transition hover:opacity-75 rounded-md p-2 px-7"
+    normalButton: "rounded-md p-2 px-7 border-2 border-primary transition hover:bg-primary"
 };
 
 export { styles };
