@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Canvas } from '@react-three/fiber';
 import Particles from './Particles';
@@ -17,10 +17,8 @@ const App = () => {
     const handleMouseMove = (e) => {
       const homeElement = homeRef.current;
       const rect = homeElement.getBoundingClientRect();
-      const offsetX = (rect.left + rect.width - e.clientX / 2) * 0.013;
-      const offsetY = (rect.top + rect.height - e.clientY / 2) * 0.013;
-
-      console.log(offsetX);
+      const offsetX = (rect.left + rect.width - e.clientX / 2) * 0.01;
+      const offsetY = (rect.top + rect.height - e.clientY / 2) * 0.01;
 
       homeElement.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     };
@@ -31,26 +29,24 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="container mx-auto px-10 md:px-0 pb-10 md:pb-0 w-full h-full">
+      <div className="container mx-auto px-10 md:px-0 pb-10 md:pb-0">
         <Header />
-        <div className="relative z-10 w-full h-full">
+        <div className="relative z-10 w-full">
           <Home />
           <Skills />
           <Projects />
           <AboutMe />
           <Contact />
         </div>
-        <div ref={homeRef} className="absolute top-0 left-0 w-full h-full z-0">
+        <div ref={homeRef} className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
           <Canvas>
-            <mesh>
-              <ambientLight intensity={0.5} />
-              <Particles />
-            </mesh>
+            <ambientLight intensity={0.5} />
+            <Particles />
           </Canvas>
         </div>
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
