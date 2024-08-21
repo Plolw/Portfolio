@@ -1,21 +1,28 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { styles } from '../style';
+import { motion } from 'framer-motion';
 
-
-export function Navigation() {
+export function Navigation({ links }) {
     const [show, setShow] = useState(false);
+    const [hoveredCategory, setHoveredCategory] = useState(null);
     const toggle = () => setShow(!show);
 
     function NavLinks() {
         return <>
-            <Link onClick={toggle} className={`${styles.headerItem}`} to="/settings">Home</Link>
-            <Link onClick={toggle} className={`${styles.headerItem}`} to="/workouts">Skills</Link>
-            <Link onClick={toggle} className={`${styles.headerItem}`} to="/">Projects</Link>
-            <Link onClick={toggle} className={`${styles.headerItem}`} to="/">About me</Link>
-            <Link onClick={toggle} className={`${styles.headerItem}`} to="/">Contact</Link>
+            {links.map((link) => (
+                <a
+                    key={link.id}
+                    onMouseEnter={() => setHoveredCategory(link.id)}
+                    onMouseLeave={() => setHoveredCategory(null)}
+                    onClick={toggle}
+                    className={`${styles.headerItem} relative`}
+                    href={`#${link.id}`}
+                >
+                    {link.name}
+                </a>
+            ))}
         </>
     }
 

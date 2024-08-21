@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { styles } from "../style";
 
 const SkillImage = ({ skill }) => {
     const [name, mastery] = Object.entries(skill)[0];
@@ -27,7 +28,7 @@ const SkillImage = ({ skill }) => {
 
     return (
         <div id={name} className="flex flex-row items-center w-3/5 mb-3">
-            <p className="w-2/12 text-left">{name}</p>
+            <p className={`${styles.descText} w-2/12 text-left text-lg`}>{name}</p>
             <div className="bg-sectext h-3 w-full rounded-sm">
                 <motion.div
                     className="bg-primary h-3 rounded-sm"

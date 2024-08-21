@@ -6,7 +6,7 @@ const Particles = () => {
 
     useFrame(() => {
         if (particlesRef.current) {
-            particlesRef.current.rotation.y += 0.00007;
+            particlesRef.current.rotation.y += 0.00009;
         }
     });
 
