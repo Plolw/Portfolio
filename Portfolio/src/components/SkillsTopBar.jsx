@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { styles } from '../style';
 
 const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
     const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -15,11 +16,11 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
                 {skillCategories.map((category, index) => (
                     <React.Fragment key={category}>
                         <button
-                            className="relative px-28 py-2"
+                            className="relative px-28"
                             onMouseEnter={() => setHoveredCategory(category)}
                             onClick={() => setSelectedCategory(category)}
                         >
-                            <p>{category}</p>
+                            <p className={`${styles.descText} uppercase`}>{category}</p>
                             {(hoveredCategory === category || (!hoveredCategory && selectedCategory === category)) && (
                                 <motion.div
                                     layoutId="highlight"

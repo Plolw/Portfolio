@@ -2,6 +2,7 @@ import React from 'react';
 import HomeModel from '../components/HomeModel';
 import HomeTitle from '../components/HomeTitle';
 import HomeDesc from '../components/HomeDesc';
+import DownArrow from '../components/DownArrow';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                 </div>
                 <HomeDesc />
             </div>
+            <DownArrow />
         </div>
     )
 }
