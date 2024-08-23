@@ -1,9 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { onLoadVariant } from '../motion';
 
 function HomeTitle() {
+
     return (
-        <div className='text-6xl w-3/5 relative z-10'>
+        <motion.div
+            className='text-6xl w-3/5 relative z-10'
+            variants={onLoadVariant(-50)}
+            initial="hidden"
+            whileInView="show">
             I'm Pol, a
             <span className='relative inline-block mx-2'>
                 <motion.span
@@ -37,7 +43,7 @@ function HomeTitle() {
                 />
             </span>
             developer!
-        </div>
+        </motion.div>
     )
 }
 

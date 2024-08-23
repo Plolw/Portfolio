@@ -2,6 +2,7 @@ import React from 'react';
 import { styles } from '../style';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { onLoadVariant } from '../motion';
 
 const HomeDesc = () => {
     const [height, setHeight] = useState('100%');
@@ -38,14 +39,31 @@ const HomeDesc = () => {
                 />
             </div>
             <div className='flex flex-col'>
-                <div className={`${styles.descText}`}>
+                <motion.div
+                    className={`${styles.descText}`}
+                    variants={onLoadVariant(-50)}
+                    initial="hidden"
+                    whileInView="show"
+                >
                     Hi, I have a passion for <span className='text-primary'>technology</span>, <span className='text-primary'>science</span> and <span className='text-primary'>art</span>.
                     This has lead to years of practicing and studying in these fields.
                     More specifically web and software development, videogame design and development, data science and math.
-                </div>
-                <div className='mt-20'>
-                    <button className={`${styles.normalButton}`}>Download CV</button>
-                </div>
+                </motion.div>
+                <motion.div
+                    className='mt-20'
+                    variants={onLoadVariant(0, 50)}
+                    initial="hidden"
+                    whileInView="show"
+                >
+                    <motion.button
+                        className='rounded-md p-2 px-7 border-2 border-primary'
+                        whileHover={{ scale: 1.15 }}
+                        whileTap={{ scale: 0.95, rotate: "5deg", background: "#007bff" }}
+                        transition={{ duration: 0.1 }}
+                    >
+                        Download CV
+                    </motion.button>
+                </motion.div>
             </div>
         </div>
     )

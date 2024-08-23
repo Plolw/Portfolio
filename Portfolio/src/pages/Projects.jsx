@@ -1,7 +1,7 @@
 import ProjectCard from '../components/ProjectCard';
 import { useMotionValue } from 'framer-motion';
 import Cube from '../components/Cube';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Projects = () => {
 
@@ -24,7 +24,6 @@ const Projects = () => {
     }
     const [cursorIn, setCursorIn] = useState(false);
     const [collision, SetCollision] = useState(false);
-    console.log(collision);
 
     return (
         <>
@@ -33,6 +32,7 @@ const Projects = () => {
                 onMouseMove={moveCursor}
                 onMouseEnter={() => { setCursorIn(true) }}
                 onMouseLeave={() => { setCursorIn(false) }}
+                style={{ cursor: "none" }}
             >
                 {projects.map((project, index) => {
                     return (
@@ -47,7 +47,7 @@ const Projects = () => {
                         />
                     );
                 })}
-                {cursorIn ? <Cube cursorX={cursorX} cursorY={cursorY} /> : <></>}
+                {cursorIn ? <Cube cursorX={cursorX} cursorY={cursorY} collision={collision} /> : <></>}
             </div>
         </>
     )

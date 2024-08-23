@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { styles } from '../style';
+import { onLoadVariant } from "../motion";
 
 const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
     const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -8,9 +9,12 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
     const skillCategories = Object.keys(skills);
 
     return (
-        <div
+        <motion.div
             className="relative flex flex-col items-center gap-5"
             onMouseLeave={() => setHoveredCategory(null)}
+            variants={onLoadVariant(-50, 0, 0.1)}
+            initial="hidden"
+            whileInView="show"
         >
             <div className="flex flex-row justify-between">
                 {skillCategories.map((category, index) => (
@@ -36,7 +40,7 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
                 ))}
             </div>
             <div className="bg-primary w-10/12 h-1 rounded-sm"></div>
-        </div>
+        </motion.div>
     );
 };
 
