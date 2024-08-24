@@ -20,7 +20,7 @@ const HomeDesc = () => {
 
     return (
         <div
-            className='self-center w-2/5 mt-18 ml-20 flex flex-row gap-10'
+            className='self-center w-4/5 lg:w-2/5 2xl:ml-20 flex flex-row gap-3 2xl:gap-10'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -50,7 +50,7 @@ const HomeDesc = () => {
                     More specifically web and software development, videogame design and development, data science and math.
                 </motion.div>
                 <motion.div
-                    className='mt-20'
+                    className='mt-10 2xl:mt-20'
                     variants={onLoadVariant(0, 50)}
                     initial="hidden"
                     whileInView="show"

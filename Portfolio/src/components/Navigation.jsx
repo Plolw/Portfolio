@@ -17,7 +17,7 @@ export function Navigation({ links }) {
                             onMouseEnter={() => setHoveredCategory(link.id)}
                             onMouseLeave={() => setHoveredCategory(null)}
                             onClick={toggle}
-                            className={`text-lg relative z-10`}
+                            className={`text-md lg:text-lg relative z-10`}
                             href={`#${link.id}`}
                         >
                             {link.name}
@@ -39,7 +39,7 @@ export function Navigation({ links }) {
     return (
         <>
             <nav className='w-2/5 flex justify-end'>
-                <div className='hidden w-full md:flex justify-between mb-3 p-10'>
+                <div className='hidden w-full md:flex justify-between 2xl:mb-3 p-5 2xl:p-8'>
                     <NavLinks />
                 </div>
                 <div className='md:hidden pt-10 mb-3'>

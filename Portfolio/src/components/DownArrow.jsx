@@ -9,7 +9,7 @@ const DownArrow = () => {
             initial={{ translate: "0px 0px" }}
             animate={{ translate: ["0px 40px", "0px 0px"] }}
             transition={{ duration: 1, repeat: Infinity, repeatDelay: 0.6 }}
-            className='self-center pt-10'
+            className='hidden md:flex self-center pt-5 2xl:pt-10'
         >
             <IconContext.Provider value={{ color: "#007bff" }}>
                 <MdKeyboardDoubleArrowDown className='size-20' />

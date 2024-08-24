@@ -6,7 +6,7 @@ function HomeTitle() {
 
     return (
         <motion.div
-            className='text-6xl w-3/5 relative z-10'
+            className='text-2xl md:text-4xl lg:text-5xl 2xl:text-5xl w-full lg:w-3/5 relative z-10 2xl:ml-20'
             variants={onLoadVariant(-50)}
             initial="hidden"
             whileInView="show">

@@ -9,8 +9,6 @@ import Projects from './pages/Projects';
 import AboutMe from './pages/AboutMe';
 import Contact from './pages/Contact';
 import ScrollBarRectangle from './components/ScrollBarRectangle';
-import Cube from './components/Cube';
-import { motion, useMotionValue } from 'framer-motion';
 
 const App = () => {
   const mainRef = useRef(null);
@@ -48,10 +46,10 @@ const App = () => {
           </Canvas>
         </div>
       </div>
-      <div className='fixed top-20 right-[3.3rem] z-30 mx-auto'>
+      <div className='hidden md:flex fixed top-20 right-[3.3rem] z-30 mx-auto'>
         <ScrollBarRectangle homeRef={homeRef} skillsRef={skillsRef} projectsRef={projectsRef} aboutRef={aboutRef} contactRef={contactRef} />
       </div>
-      <div className='fixed top-20 right-10 z-20 mx-auto bg-sectext h-4/5 w-1 opacity-40 rounded-sm flex flex-col justify-between items-center py-10'>
+      <div className='hidden md:flex fixed top-20 right-10 z-20 mx-auto bg-sectext h-4/5 w-1 opacity-40 rounded-sm flex flex-col justify-between items-center py-10'>
         <a href="#home"><div className='bg-sectext w-3 h-5 rounded-sm'></div></a>
         <a href="#skills"><div className='bg-sectext w-3 h-5 rounded-sm'></div></a>
         <a href="#projects"><div className='bg-sectext w-3 h-5 rounded-sm'></div></a>
