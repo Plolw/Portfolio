@@ -1,29 +1,39 @@
 import { useState } from 'react';
-import { IoMenu } from "react-icons/io5";
-import { IoClose } from "react-icons/io5";
-import { styles } from '../style';
+import { IoMenu, IoClose } from "react-icons/io5";
 import { motion } from 'framer-motion';
 
 export function Navigation({ links }) {
     const [show, setShow] = useState(false);
-    const [hoveredCategory, setHoveredCategory] = useState(null);
     const toggle = () => setShow(!show);
 
     function NavLinks() {
-        return <>
-            {links.map((link) => (
-                <a
-                    key={link.id}
-                    onMouseEnter={() => setHoveredCategory(link.id)}
-                    onMouseLeave={() => setHoveredCategory(null)}
-                    onClick={toggle}
-                    className={`${styles.headerItem} relative`}
-                    href={`#${link.id}`}
-                >
-                    {link.name}
-                </a>
-            ))}
-        </>
+        const [hoveredCategory, setHoveredCategory] = useState(null);
+
+        return (
+            <>
+                {links.map((link) => (
+                    <div key={link.id} className="relative">
+                        <a
+                            onMouseEnter={() => setHoveredCategory(link.id)}
+                            onMouseLeave={() => setHoveredCategory(null)}
+                            onClick={toggle}
+                            className={`text-lg relative z-10`}
+                            href={`#${link.id}`}
+                        >
+                            {link.name}
+                        </a>
+                        {hoveredCategory === link.id && (
+                            <motion.div
+                                className="absolute -left-2 bottom-3 bg-secondary z-0 w-24 h-1"
+                                initial={{ scaleX: 0 }}
+                                animate={{ scaleX: 1 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 23 }}
+                            />
+                        )}
+                    </div>
+                ))}
+            </>
+        );
     }
 
     return (

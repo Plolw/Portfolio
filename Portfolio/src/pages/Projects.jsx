@@ -8,7 +8,7 @@ const Projects = () => {
     const projects = [
         { url: "ProjectsImages/Grades/Grades2.PNG", name: "GrAdes", desc: "A website to store and manage your grades.", cols: 4 },
         { url: "ProjectsImages/Kegel/Kegel.png", name: "Kegel", desc: "A 2D platformer videogame made with a team of people (in progress).", cols: 4 },
-        { url: "ProjectsImages/E-Commerce/Ecommerce.PNG", name: "E-Commerce", desc: "Simple e-commerce website to practice payments and secure crud operations.", cols: 2 },
+        { url: "ProjectsImages/E-Commerce/Ecommerce.PNG", name: "E-Commerce", desc: "Simple e-commerce website to practice secure crud operations.", cols: 2 },
         { url: "ProjectsImages/Social/Social.PNG", name: "Social Network", desc: "A social network where users can publish messages, follow and like each other.", cols: 2 },
         { url: "ProjectsImages/Works/works1.PNG", name: "Works", desc: "Website to create your workouts and store your progress (possibly upgrading to a social network soon).", cols: 4 },
         { url: "ProjectsImages/Trello/trello.PNG", name: "Trello-like website", desc: "Just like Trello, it allows you to create projects and manage tasks inside of them with your colleagues.", cols: 3 },
