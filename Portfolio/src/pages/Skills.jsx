@@ -14,7 +14,7 @@ const Skills = () => {
     const selectedSkills = skillsData[selectedCategory];
 
     return (
-        <div className='flex flex-col gap-20'>
+        <div className='flex flex-col gap-6 2xl:gap-8'>
             <SkillsTopBar
                 skills={skillsData}
                 selectedCategory={selectedCategory}

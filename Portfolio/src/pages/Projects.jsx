@@ -28,7 +28,7 @@ const Projects = () => {
     return (
         <>
             <div
-                className='grid grid-cols-8 gap-8 p-4 max-h-[80vh] overflow-y-auto hide-scrollbar'
+                className='grid grid-cols-8 gap-8 p-4 max-h-[80vh] overflow-y-auto hide-scrollbar px-16 2xl:px-20'
                 onMouseMove={moveCursor}
                 onMouseEnter={() => { setCursorIn(true) }}
                 onMouseLeave={() => { setCursorIn(false) }}

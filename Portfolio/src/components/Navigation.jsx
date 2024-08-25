@@ -24,7 +24,7 @@ export function Navigation({ links }) {
                         </a>
                         {hoveredCategory === link.id && (
                             <motion.div
-                                className="absolute -left-2 bottom-3 bg-secondary z-0 w-24 h-1"
+                                className="absolute -left-1 2xl:-left-2 bottom-3 bg-secondary z-0 w-16 2xl:w-24 h-1"
                                 initial={{ scaleX: 0 }}
                                 animate={{ scaleX: 1 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 23 }}
@@ -38,7 +38,7 @@ export function Navigation({ links }) {
 
     return (
         <>
-            <nav className='w-2/5 flex justify-end'>
+            <nav className='w-4/6 lg:w-3/6 xl:w-2/5 flex justify-end md:pr-12'>
                 <div className='hidden w-full md:flex justify-between 2xl:mb-3 p-5 2xl:p-8'>
                     <NavLinks />
                 </div>

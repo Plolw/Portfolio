@@ -7,12 +7,12 @@ const DownArrow = () => {
     return (
         <motion.div
             initial={{ translate: "0px 0px" }}
-            animate={{ translate: ["0px 40px", "0px 0px"] }}
+            animate={{ translate: ["0px 30px", "0px 0px"] }}
             transition={{ duration: 1, repeat: Infinity, repeatDelay: 0.6 }}
-            className='hidden md:flex self-center pt-5 2xl:pt-10'
+            className='hidden lg:flex self-center 2xl:pt-6'
         >
             <IconContext.Provider value={{ color: "#007bff" }}>
-                <MdKeyboardDoubleArrowDown className='size-20' />
+                <MdKeyboardDoubleArrowDown className='size-16 2xl:size-20' />
             </IconContext.Provider>
         </motion.div>
     )

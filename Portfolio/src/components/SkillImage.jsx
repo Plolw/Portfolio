@@ -27,8 +27,8 @@ const SkillImage = ({ skill }) => {
     }, [controls, mastery, name]);
 
     return (
-        <div id={name} className="flex flex-row items-center w-3/5 mb-3">
-            <p className={`${styles.descText} w-2/12 text-left text-lg`}>{name}</p>
+        <div id={name} className="flex flex-row items-center w-full md:w-3/5 mb-2">
+            <p className={`text-sm md:text-md lg:text-lg 2xl:text-xl ${styles.descText} w-4/12 md:w-2/12 text-left`}>{name}</p>
             <div className="bg-sectext h-3 w-full rounded-sm">
                 <motion.div
                     className="bg-primary h-3 rounded-sm"

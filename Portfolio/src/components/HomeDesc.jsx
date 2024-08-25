@@ -50,7 +50,7 @@ const HomeDesc = () => {
                     More specifically web and software development, videogame design and development, data science and math.
                 </motion.div>
                 <motion.div
-                    className='mt-10 2xl:mt-20'
+                    className='mt-10 2xl:mt-20 self-center lg:self-start'
                     variants={onLoadVariant(0, 50)}
                     initial="hidden"
                     whileInView="show"

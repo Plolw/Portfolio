@@ -10,21 +10,21 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
 
     return (
         <motion.div
-            className="relative flex flex-col items-center gap-5"
+            className="relative flex flex-col items-center gap-2 md:gap-4"
             onMouseLeave={() => setHoveredCategory(null)}
             variants={onLoadVariant(-50, 0, 0.1)}
             initial="hidden"
             whileInView="show"
         >
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-around md:justify-between md:pt-1">
                 {skillCategories.map((category, index) => (
                     <React.Fragment key={category}>
                         <button
-                            className="relative px-28"
+                            className="relative lg:p-2 px-4 md:px-12 lg:px-16 2xl:px-24"
                             onMouseEnter={() => setHoveredCategory(category)}
                             onClick={() => setSelectedCategory(category)}
                         >
-                            <p className={`${styles.descText} uppercase`}>{category}</p>
+                            <p className={`2xl:text-xl ${styles.descText} uppercase`}>{category}</p>
                             {(hoveredCategory === category || (!hoveredCategory && selectedCategory === category)) && (
                                 <motion.div
                                     layoutId="highlight"
@@ -35,11 +35,11 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
                                 />
                             )}
                         </button>
-                        {index < skillCategories.length - 1 && <p className="mx-10 self-center"> | </p>}
+                        {index < skillCategories.length - 1 && <p className="mx-2 md:mx-4 lg::mx-10 self-center"> | </p>}
                     </React.Fragment>
                 ))}
             </div>
-            <div className="bg-primary w-10/12 h-1 rounded-sm"></div>
+            <div className="bg-primary w-11/12 md:w-10/12 lg:w-8/12 h-1 rounded-sm"></div>
         </motion.div>
     );
 };
