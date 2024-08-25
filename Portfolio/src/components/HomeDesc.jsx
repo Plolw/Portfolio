@@ -20,7 +20,7 @@ const HomeDesc = () => {
 
     return (
         <div
-            className='self-center w-4/5 lg:w-2/5 2xl:ml-20 flex flex-row gap-3 2xl:gap-10'
+            className='self-center w-full lg:w-2/5 3xl:w-5/12 2xl:ml-20 flex flex-row gap-3 2xl:gap-10'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

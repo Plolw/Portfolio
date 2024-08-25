@@ -16,11 +16,11 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
             initial="hidden"
             whileInView="show"
         >
-            <div className="flex flex-row justify-around md:justify-between md:pt-1">
+            <div className="flex flex-row justify-around md:justify-between md:pt-1 3xl:pt-10">
                 {skillCategories.map((category, index) => (
                     <React.Fragment key={category}>
                         <button
-                            className="relative lg:p-2 px-4 md:px-12 lg:px-16 2xl:px-24"
+                            className="relative lg:p-2 px-4 md:px-12 lg:px-16 2xl:px-24 3xl:px-28"
                             onMouseEnter={() => setHoveredCategory(category)}
                             onClick={() => setSelectedCategory(category)}
                         >

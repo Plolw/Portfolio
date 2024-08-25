@@ -12,6 +12,9 @@ export default {
         primarytext: "#ffffff",
         sectext: '#b0bec5',
         bgcolor: '#082f49'
+      },
+      screens: {
+        '3xl': '1700px'
       }
     },
   },
