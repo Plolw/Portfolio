@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
@@ -51,13 +50,13 @@ const HomeModel = () => {
                 intensity={1}
             />
             <primitive object={model}
-                scale={isSmall ? 2: 2.8}
+                scale={isSmall ? 2 : 2.8}
                 position={isSmall ? [7, -3, 0] : [7, -4.8, 0]} />
-            <OrbitControls 
-                autoRotate target={[7,0,0]} 
+            <OrbitControls
+                autoRotate target={[7, 0, 0]}
                 enableZoom={false}
-                maxPolarAngle={Math.PI / 2} 
-                minPolarAngle={Math.PI / 2} 
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2}
             />
         </Canvas>
     )
