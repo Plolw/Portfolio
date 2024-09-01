@@ -6,6 +6,10 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { clone } from 'three/examples/jsm/utils/SkeletonUtils';
 import { useRef, useState } from 'react';
 
+const easeInOutQuad = (t) => {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+};
+
 const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
     const material = useLoader(MTLLoader, `${time.prefix}.mtl`);
     const originalModel = useLoader(OBJLoader, `${time.prefix}.obj`, loader => {
@@ -15,23 +19,28 @@ const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
     const mesh = useRef();
     const model = clone(originalModel);
 
-    const [rotationState, setRotationState] = useState(0);
+    const [rotationProgress, setRotationProgress] = useState(0);
     const [isRotating, setIsRotating] = useState(false);
 
     useFrame((state, delta) => {
         if (triggerRotation && !isRotating) {
             setIsRotating(true);
+            setRotationProgress(0);
         }
 
         if (isRotating) {
-            if (rotationState < 2 * Math.PI) {
-                mesh.current.rotation.y += delta * Math.PI * 5;
-                setRotationState(rotationState + delta * Math.PI * 5);
-            } else {
-                // Reset rotation state after full rotation
-                setRotationState(0);
+            const speed = 0.8; // Rotation duration in seconds
+            const increment = delta / speed;
+            const easedProgress = easeInOutQuad(rotationProgress);
+
+            mesh.current.rotation.y = easedProgress * 2 * Math.PI;
+
+            if (rotationProgress >= 1) {
+                setRotationProgress(1);
                 setIsRotating(false);
                 onRotationComplete(); // Call the callback to stop the trigger
+            } else {
+                setRotationProgress(rotationProgress + increment);
             }
         }
     });
