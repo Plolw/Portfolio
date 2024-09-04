@@ -9,7 +9,7 @@ const TimeCard = ({ timeData, monthName, monthName2 }) => {
             <motion.div className='md:w-4/12 h-full self-center' variants={onLoadVariant(0, -50, 0.2)} initial="hidden" whileInView="show" >
                 <img className='w-full h-full object-cover rounded-sm border-primary border-4' src={timeData.imgUrl} />
             </motion.div>
-            <motion.div className='md:w-6/12 flex flex-col justify-around self-center' variants={onLoadVariant(-50, 0, 0.2)} initial="hidden" whileInView="show" >
+            <motion.div className='md:w-6/12 flex flex-col justify-around self-center gap-3 md:gap-5 lg:gap-8' variants={onLoadVariant(-50, 0, 0.2)} initial="hidden" whileInView="show" >
                 <div>
                     <p className="text-2xl md:text-4xl lg:text-5xl 3xl:text-6xl">{timeData.title}</p>
                 </div>

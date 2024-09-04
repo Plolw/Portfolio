@@ -10,7 +10,7 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
 
     return (
         <motion.div
-            className="relative flex flex-col items-center pt-10 md:pt-0 gap-4"
+            className="relative flex flex-col items-center pt-5 md:pt-0 gap-4"
             onMouseLeave={() => setHoveredCategory(null)}
             variants={onLoadVariant(-50, 0, 0.1)}
             initial="hidden"

@@ -5,7 +5,7 @@ import TimeCubeCanvas from './TimeCubeCanvas'
 const TimeLine = ({ timesData, setCurrentDate }) => {
     return (
         <div className='flex flex-col'>
-            <div className='flex flex-row justify-center'>
+            <div className='flex flex-row md:justify-center overflow-x-auto'>
                 {timesData.map((time, index) => (
                     <React.Fragment key={index}>
                         <TimeCubeCanvas time={time} setCurrentDate={setCurrentDate} />
@@ -13,7 +13,7 @@ const TimeLine = ({ timesData, setCurrentDate }) => {
                     </React.Fragment>
                 ))}
             </div>
-            <div className='flex flex-row justify-center text-center'>
+            <div className='hidden md:flex flex-row justify-center text-center'>
                 {timesData.map((time, index) => (
                     <React.Fragment key={index}>
                         <p className='w-36 text-sectext text-center'>{time.dateS.getFullYear()}/{time.dateS.getMonth()}</p>

@@ -40,7 +40,7 @@ const HomeDesc = () => {
             </div>
             <div className='flex flex-col'>
                 <motion.div
-                    className={`${styles.descText}`}
+                    className={`md:text-2xl ${styles.descText}`}
                     variants={onLoadVariant(-50)}
                     initial="hidden"
                     whileInView="show"

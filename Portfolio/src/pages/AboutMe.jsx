@@ -34,9 +34,9 @@ const AboutMe = () => {
     const [currentDate, setCurrentDate] = useState(times[0]);
 
     return (
-        <div className='flex flex-col pt-20 lg:pt-0'>
+        <div className='flex flex-col pt-20 lg:pt-0 min-h-[100vh]'>
             <SectionTitle text={"About Me"} />
-            <div className='flex flex-col h-full 3xl:pt-14 gap-20 w-full'>
+            <div className='flex flex-col h-full 3xl:pt-14 gap-10 md:gap-20 w-full'>
                 <TimeCard timeData={currentDate} monthName={monthNames[currentDate.dateS.getMonth()]} monthName2={monthNames[currentDate.dateF.getMonth()]} />
                 <TimeLine timesData={times} setCurrentDate={setCurrentDate} />
             </div>
