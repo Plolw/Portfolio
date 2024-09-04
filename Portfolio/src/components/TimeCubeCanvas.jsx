@@ -6,11 +6,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { clone } from 'three/examples/jsm/utils/SkeletonUtils';
 import { useRef, useState } from 'react';
 
-const easeInOutQuad = (t) => {
-    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-};
 
-const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
+const CubeTime = ({ time, isHovered }) => {
     const material = useLoader(MTLLoader, `${time.prefix}.mtl`);
     const originalModel = useLoader(OBJLoader, `${time.prefix}.obj`, loader => {
         material.preload();
@@ -18,30 +15,13 @@ const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
     });
     const mesh = useRef();
     const model = clone(originalModel);
+    const targetScale = isHovered ? 2.7 : 2.4;
 
-    const [rotationProgress, setRotationProgress] = useState(0);
-    const [isRotating, setIsRotating] = useState(false);
-
-    useFrame((state, delta) => {
-        if (triggerRotation && !isRotating) {
-            setIsRotating(true);
-            setRotationProgress(0);
-        }
-
-        if (isRotating) {
-            const speed = 0.8; // Rotation duration in seconds
-            const increment = delta / speed;
-            const easedProgress = easeInOutQuad(rotationProgress);
-
-            mesh.current.rotation.y = easedProgress * 2 * Math.PI;
-
-            if (rotationProgress >= 1) {
-                setRotationProgress(1);
-                setIsRotating(false);
-                onRotationComplete(); // Call the callback to stop the trigger
-            } else {
-                setRotationProgress(rotationProgress + increment);
-            }
+    useFrame(() => {
+        if (mesh.current) {
+            mesh.current.scale.x = mesh.current.scale.x + (targetScale - mesh.current.scale.x) * 0.1;
+            mesh.current.scale.y = mesh.current.scale.y + (targetScale - mesh.current.scale.y) * 0.1;
+            mesh.current.scale.z = mesh.current.scale.z + (targetScale - mesh.current.scale.z) * 0.1;
         }
     });
 
@@ -51,8 +31,7 @@ const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
             <mesh ref={mesh}>
                 <primitive
                     object={model}
-                    scale={[2.7, 2.7, 2.7]}
-                    position={[-0.5, -1.8, 0]}
+                    position={[-0.15, -0.65, 0]}
                 />
             </mesh>
         </Float>
@@ -60,31 +39,22 @@ const CubeTime = ({ time, triggerRotation, onRotationComplete }) => {
 };
 
 const TimeCubeCanvas = ({ time, setCurrentDate }) => {
-    const [triggerRotation, setTriggerRotation] = useState(false);
-
-    const handleMouseEnter = () => {
-        if (!triggerRotation) {
-            setTriggerRotation(true);
-        }
-    };
-
-    const handleRotationComplete = () => {
-        setTriggerRotation(false); // Reset trigger after rotation completes
-    };
+    const [isHovered, setHovered] = useState(false);
 
     return (
-        <div
+        <button
             className='w-36'
-            onMouseEnter={handleMouseEnter}
+            onClick={() => setCurrentDate(time)}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
         >
             <Canvas>
                 <CubeTime
                     time={time}
-                    triggerRotation={triggerRotation}
-                    onRotationComplete={handleRotationComplete}
+                    isHovered={isHovered}
                 />
             </Canvas>
-        </div>
+        </button>
     );
 };
 

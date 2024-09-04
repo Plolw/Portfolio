@@ -29,9 +29,9 @@ const SkillImage = ({ skill }) => {
     return (
         <div id={name} className="flex flex-row items-center w-full md:w-4/6 mb-2">
             <p className={`text-sm md:text-md lg:text-lg 2xl:text-xl 3xl:text-xl ${styles.descText} w-4/12 md:w-2/12 text-left`}>{name}</p>
-            <div className="bg-sectext h-3 w-full rounded-sm">
+            <div className="bg-sectext h-2 md:h-3 w-full rounded-sm">
                 <motion.div
-                    className="bg-primary h-3 rounded-sm"
+                    className="bg-primary h-2 md:h-3 rounded-sm"
                     style={{ width: "0%" }}
                     animate={controls}
                     initial={{ width: "0%" }}

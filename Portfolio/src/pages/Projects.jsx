@@ -2,6 +2,7 @@ import ProjectCard from '../components/ProjectCard';
 import { useMotionValue } from 'framer-motion';
 import Cube from '../components/Cube';
 import { useEffect, useState } from 'react';
+import SectionTitle from '../components/SectionTitle';
 
 const Projects = () => {
 
@@ -26,9 +27,10 @@ const Projects = () => {
     const [collision, SetCollision] = useState(false);
 
     return (
-        <>
+        <div className='flex flex-col'>
+            <SectionTitle text={"Projects"} />
             <div
-                className='grid grid-cols-8 gap-8 p-4 max-h-[80vh] overflow-y-auto hide-scrollbar px-16 2xl:px-20 3xl:px-10'
+                className='flex flex-col lg:grid grid-cols-8 gap-5 lg:gap-8 lg:p-4 lg:max-h-[76vh] overflow-y-auto lg:hide-scrollbar lg:px-16 2xl:px-20 3xl:px-10'
                 onMouseMove={moveCursor}
                 onMouseEnter={() => { setCursorIn(true) }}
                 onMouseLeave={() => { setCursorIn(false) }}
@@ -49,7 +51,7 @@ const Projects = () => {
                 })}
                 {cursorIn ? <Cube cursorX={cursorX} cursorY={cursorY} collision={collision} /> : <></>}
             </div>
-        </>
+        </div>
     )
 }
 

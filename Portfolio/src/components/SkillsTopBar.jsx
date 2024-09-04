@@ -10,7 +10,7 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
 
     return (
         <motion.div
-            className="relative flex flex-col items-center gap-2 md:gap-4"
+            className="relative flex flex-col items-center pt-10 md:pt-0 gap-4"
             onMouseLeave={() => setHoveredCategory(null)}
             variants={onLoadVariant(-50, 0, 0.1)}
             initial="hidden"
@@ -20,11 +20,11 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
                 {skillCategories.map((category, index) => (
                     <React.Fragment key={category}>
                         <button
-                            className="relative lg:p-2 px-4 md:px-12 lg:px-16 2xl:px-24 3xl:px-28"
+                            className="relative lg:p-2 px-2 md:px-4 md:px-12 lg:px-16 2xl:px-24 3xl:px-28"
                             onMouseEnter={() => setHoveredCategory(category)}
                             onClick={() => setSelectedCategory(category)}
                         >
-                            <p className={`2xl:text-xl ${styles.descText} uppercase`}>{category}</p>
+                            <p className={`text-sm md:text-lg 2xl:text-xl ${styles.descText} uppercase`}>{category}</p>
                             {(hoveredCategory === category || (!hoveredCategory && selectedCategory === category)) && (
                                 <motion.div
                                     layoutId="highlight"
@@ -35,7 +35,7 @@ const SkillsTopBar = ({ skills, selectedCategory, setSelectedCategory }) => {
                                 />
                             )}
                         </button>
-                        {index < skillCategories.length - 1 && <p className="mx-2 md:mx-4 lg::mx-10 self-center"> | </p>}
+                        {index < skillCategories.length - 1 && <p className="mx-1 md:mx-4 lg::mx-10 self-center"> | </p>}
                     </React.Fragment>
                 ))}
             </div>

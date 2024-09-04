@@ -56,4 +56,21 @@ section {
     /* Firefox */
 }
 
-body {}
+/* Responsive styling */
+@media (max-width: 768px) {
+
+    body,
+    html {
+        scroll-snap-type: none;
+        /* Disable snap scrolling on mobile */
+    }
+
+    section {
+        height: auto;
+        /* Allow content to flow naturally */
+        overflow-y: auto;
+        /* Enable scrolling within the section */
+        scroll-snap-align: none;
+        /* Disable snap alignment */
+    }
+}

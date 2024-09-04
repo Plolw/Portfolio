@@ -4,12 +4,11 @@ const styles = {
     padding: "sm:px-16 px-6 sm:py-16 py-10",
 
     headerText:
-        "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
+        "tracking-widest px-8 z-10 text-2xl md:text-4xl lg:text-5xl 3xl:text-6xl",
     subText:
         "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
-
     descText:
-        "text-sm 2xl:text-2xl 3xl:text-2xl text-white md:tracking-wider leading-loose",
+        "text-sm md:text-2xl text-white md:tracking-wider leading-loose",
     smallHeaderText:
         "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
 
