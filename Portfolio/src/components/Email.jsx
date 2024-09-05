@@ -6,9 +6,14 @@ import { onLoadVariant } from '../motion';
 
 const Email = () => {
     const form = useRef();
+    const em = useRef();
     const [isSending, setIsSending] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
     const [timer, setTimer] = useState(null);
+
+    function Copy() {
+        navigator.clipboard.writeText(em.current.innerText);
+    }
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -41,7 +46,7 @@ const Email = () => {
     }, [timer]);
 
     return (
-        <motion.form ref={form} onSubmit={sendEmail} className='flex flex-col gap-6 3xl:gap-10 p-3 md:p-6 2xl:p-10 rounded-sm bg-opacity-20 md:w-2/5 border-4 lg:border-8 border-primary'
+        <motion.form ref={form} onSubmit={sendEmail} className='flex flex-col gap-4 3xl:gap-8 p-3 md:p-6 2xl:p-10 rounded-sm bg-opacity-20 md:w-2/5 border-4 lg:border-8 border-primary'
             variants={onLoadVariant(50, 0.5)} initial="hidden" whileInView="show"
         >
             <p className='text-2xl 2xl:text-3xl 3xl:text-4xl'>Send me a <span className='text-primary'>message!</span></p>
@@ -55,8 +60,9 @@ const Email = () => {
             </div>
             <div className='flex flex-col gap-2 w-full'>
                 <label className={`${styles.label}`}>Message</label>
-                <textarea name="message" required disabled={isDisabled} className={`h-16 lg:h-28 3xl:h-44 ${styles.formInputText}`} />
+                <textarea name="message" required disabled={isDisabled} className={`h-16 lg:h-20 3xl:h-36 ${styles.formInputText}`} />
             </div>
+            <p className='text-sm text-primary'>Or if you want to send an email directly: <a href="" ref={em} onClick={Copy} title='Click to copy!'>polpolortiz@gmail.com</a></p>
             <motion.button
                 type="submit"
                 disabled={isDisabled || isSending}

@@ -16,7 +16,7 @@ const styles = {
 
     normalButton: "rounded-md p-2 px-7 border-2 border-primary",
     formInputText: "text-md lg:text-lg rounded-sm text-secondary md:p-1 px-2 md:px-4 lg:px-6 lg:p-2 focus:outline-none transition focus:ring focus:ring-primary",
-    label: "text-secondary text-md md:text-lg 2xl:text-xl tracking-wider"
+    label: "text-secondary text-md md:text-md 2xl:text-lg tracking-wider"
 };
 
 export { styles };

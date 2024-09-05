@@ -16,7 +16,7 @@ const Socials = () => {
                     transition={{ duration: 0.3 }}
                     className='transition hover:bg-primary p-2 rounded-md'
                 >
-                    <a href='https://github.com/Plolw'><VscGithubInverted className='size-8 md:size-10 2xl:size-14 3xl:size-20' /></a>
+                    <a href='https://github.com/Plolw'><VscGithubInverted className='size-8 md:size-10 2xl:size-14 3xl:size-16' /></a>
                 </motion.div>
                 <motion.div
                     initial={{ translate: "0px 0px" }}
@@ -24,7 +24,7 @@ const Socials = () => {
                     transition={{ duration: 0.3 }}
                     className='transition hover:bg-primary p-2 rounded-md'
                 >
-                    <a href='https://www.instagram.com/polortizz_/'><FaInstagram className='size-8 md:size-10 2xl:size-14 3xl:size-20' /></a>
+                    <a href='https://www.instagram.com/polortizz_/'><FaInstagram className='size-8 md:size-10 2xl:size-14 3xl:size-16' /></a>
                 </motion.div>
                 <motion.div
                     initial={{ translate: "0px 0px" }}
@@ -32,7 +32,7 @@ const Socials = () => {
                     transition={{ duration: 0.3 }}
                     className='transition hover:bg-primary p-2 rounded-md'
                 >
-                    <a href=''><FaDiscord className='size-8 md:size-10 2xl:size-14 3xl:size-20' /></a>
+                    <a href=''><FaDiscord className='size-8 md:size-10 2xl:size-14 3xl:size-16' /></a>
                 </motion.div>
             </div>
         </motion.div>
