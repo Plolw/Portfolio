@@ -39,7 +39,7 @@ export function Navigation({ links }) {
     return (
         <>
             <nav className='w-4/6 lg:w-3/6 xl:w-2/5 flex justify-end md:pr-12'>
-                <div className='hidden w-full md:flex justify-between 2xl:mb-3 p-5 2xl:p-8'>
+                <div className='hidden w-full md:flex justify-between 2xl:mb-3 p-5 3xl:p-8'>
                     <NavLinks />
                 </div>
                 <div className='md:hidden pt-10 mb-3'>

@@ -3,7 +3,7 @@ import SkillImage from "./SkillImage";
 
 const SkillList = ({ list }) => {
     return (
-        <div className="flex flex-col w-full gap-3 3xl:gap-4 items-center lg:h-screen">
+        <div className="flex flex-col w-full gap-2 3xl:gap-4 items-center lg:h-screen">
             <div className="hidden md:flex flex-row items-center w-full md:w-3/5">
                 <p className="w-4/12 md:w-2/12 text-left"></p>
                 <div className="flex flex-row justify-between w-full">
