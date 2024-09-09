@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/" element={
             <MainPage homeRef={homeRef} skillsRef={skillsRef} projectsRef={projectsRef} aboutRef={aboutRef} contactRef={contactRef} />
           }/>
-          <Route path='/Project/:proj' element={<ProjectPage />}/>
+          <Route path='/Project/:index' element={<ProjectPage />}/>
         </Routes>
         <div ref={mainRef} className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
           <Canvas>
