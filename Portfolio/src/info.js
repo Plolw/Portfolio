@@ -1,49 +1,49 @@
 export const projects = [
     {
         url: "ProjectsImages/Works/works1.PNG", name: "Works", desc: "Website to create your workouts and store your progress (possibly upgrading to a social network soon).", cols: 4,
-        imgPrefix: "ProjectsImages/Works/works", stack: "DjangoRestFramework, SQLite3 (for testing), PostgreSQL (for deployment), React, Tailwind, Railway (for deployment), Vercel(for deployment), Git",
+        imgPrefix: "/ProjectsImages/Works/Works", stack: "DjangoRestFramework, SQLite3 (for testing), PostgreSQL (for deployment), React, Tailwind, Railway (for deployment), Vercel(for deployment), Git",
         learnings: `This was the final project for CS50Web so I used the technologies I learned there. While doing this project I learned a lot of about comunication between a database,
         a backend and a frontend using an API. Meanwhile ovbiously learning to manage secure CRUD operations using HTTPS requests with CORS headers to identify users and validate the requests.
-        Also I implemented a user management system so that everyone can keep their workouts to themselves.`,
+        I also implemented a user management system so that everyone can keep their workouts to themselves.`,
         githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/Kegel/kegle1.PNG", name: "Kegle", desc: "A 2D platformer videogame made with a team of people (in progress).", cols: 4,
-        imgPrefix: "ProjectsImages/Kegel/kegle", stack: "Unity, C#, Aseprite, Photoshop, Git", learnings: `Since Kegle is being made with a team of people I'm learning a lot about managing projects
+        imgPrefix: "/ProjectsImages/Kegel/kegle", stack: "Unity, C#, Aseprite, Photoshop, Git", learnings: `Since Kegle is being made with a team of people I'm learning a lot about managing projects
         that involve more than one person. This applies on a more social level of managing the comunications with the team and organizing the workload, and on a more 
         technichal level of sharing all the code and files, wichhas lead to learning to use Git in a real world situation. \n Since the game incorporates a complex inventory sistem made from scratch (crafting items, 
         upgradable weapons, etc), I have learned a lot about data structures and OOP.`, githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/E-Commerce/Ecommerce1.PNG", name: "E-Commerce", desc: "Simple e-commerce website to practice secure crud operations.", cols: 2,
-        imgPrefix: "rojectsImages/E-Commerce/Ecommerce", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `As one of my first dinamic websites (made as a project for CS50Web), this project helped me
+        imgPrefix: "/ProjectsImages/E-Commerce/Ecommerce", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `As one of my first dinamic websites (made as a project for CS50Web), this project helped me
         learn a lot about JavaScript and comunications from a frontend to a backend with an API.`, githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/Social/Social1.PNG", name: "Social Network", desc: "A social network where users can publish messages, follow and like each other.", cols: 2,
-        imgPrefix: "ProjectsImages/Social/Social", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `Learned a lot about CRUD operations and user management. Since it is a social network users must be
+        imgPrefix: "/ProjectsImages/Social/Social", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `Learned a lot about CRUD operations and user management. Since it is a social network users must be
         able to create accounts and login to them. Also learned about password security and secure HTTPS requests.`,
         githubLink: "", websiteLink: ""
     },
     {
-        url: "ProjectsImages/Grades/Grades2.PNG", name: "GrAdes", desc: "A website to store and manage your grades.", cols: 4,
-        imgPrefix: "ProjectsImages/Grades/Grades", stack: "Django, HTML, CSS, JavaScript, SQLite3", learnings: `This website was the final project to the CS50 course. I learned a lot about web development and how
+        url: "ProjectsImages/Grades/Grades1.PNG", name: "GrAdes", desc: "A website to store and manage your grades.", cols: 4,
+        imgPrefix: "/ProjectsImages/Grades/Grades", stack: "Django, HTML, CSS, JavaScript, SQLite3", learnings: `This website was the final project to the CS50 course. I learned a lot about web development and how
         browsers work with dinamic and static websites, CRUD opeartions and user management.`, githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/Trello/trello1.PNG", name: "Trello-like website", desc: "Just like Trello, it allows you to create projects and manage tasks inside of them with your colleagues.", cols: 3,
-        imgPrefix: "ProjectsImages/Trello/trello", stack: "DjangoRestFramework, Angular, Tailwind, SQLite3 (for testing), MySQL (for deployment), Chart.js", learnings: `This was my first freelance work for a client.
+        imgPrefix: "/ProjectsImages/Trello/trello", stack: "DjangoRestFramework, Angular, Tailwind, SQLite3 (for testing), MySQL (for deployment), Chart.js", learnings: `This was my first freelance work for a client.
         I learned a lot about comunication with clients and setting up a project based on my client's needs. On a technichal side I learned Angular, more advanced user management (cookies, localStorage, sessions, etc)
         , agile methodologies and advanced data visualization (creating custom graphs without frameworks, special mention to a Gantt graph).`, githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/E-mail/Email1.PNG", name: "E-mail", desc: "A simple email service.", cols: 2,
-        imgPrefix: "ProjectsImages/E-mail/Email", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `This isn't a real email, just a messaging service with emails being the 'user_id'. As one of the firsts
+        imgPrefix: "/ProjectsImages/E-mail/Email", stack: "HTML, CSS, JavaScript, Django, SQLite3", learnings: `This isn't a real email, just a messaging service with emails being the 'user_id'. As one of the firsts
         projects from CS50Web I learned a lot about JavaScriptm, HTML and CRUD operations with and API and a database.`, githubLink: "", websiteLink: ""
     },
     {
         url: "ProjectsImages/TRC/TRC1.PNG", name: "The random color", desc: "Webapp to gain colors inspiration for your projects.", cols: 3,
-        imgPrefix: "ProjectsImages/TRC/TRC", stack: "Next.js, Vercel, Vercel Analytics, Tailwind", learnings: `A website where you can click the screen to change the color. Originally made with the idea of getting high
+        imgPrefix: "/ProjectsImages/TRC/TRC", stack: "Next.js, Vercel, Vercel Analytics, Tailwind", learnings: `A website where you can click the screen to change the color. Originally made with the idea of getting high
         page views and adding adds to the website. To make the high page views the idea is to learn about SEO, still a work in progress although you can visit the webpage if you want!`, githubLink: "",
         websiteLink: "https://www.therandomcolor.com/"
     }

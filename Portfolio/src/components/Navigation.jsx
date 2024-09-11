@@ -18,7 +18,7 @@ export function Navigation({ links }) {
                             onMouseLeave={() => setHoveredCategory(null)}
                             onClick={toggle}
                             className={`text-md lg:text-lg relative z-10`}
-                            href={`#${link.id}`}
+                            href={`/#${link.id}`}
                         >
                             {link.name}
                         </a>
