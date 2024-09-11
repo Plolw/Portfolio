@@ -10,7 +10,7 @@ export const projects = [
     {
         url: "ProjectsImages/Kegel/kegle1.PNG", name: "Kegle", desc: "A 2D platformer videogame made with a team of people (in progress).", cols: 4,
         imgPrefix: "/ProjectsImages/Kegel/kegle", stack: "Unity, C#, Aseprite, Photoshop, Git", learnings: `Since Kegle is being made with a team of people I'm learning a lot about managing projects
-        that involve more than one person. This applies on a more social level of managing the comunications with the team and organizing the workload, and on a more 
+        that involve more than one person. This applies on a more social level of managing the comunications with the team and the workload, and on a more 
         technichal level of sharing all the code and files, wichhas lead to learning to use Git in a real world situation. \n Since the game incorporates a complex inventory sistem made from scratch (crafting items, 
         upgradable weapons, etc), I have learned a lot about data structures and OOP.`, githubLink: "", websiteLink: ""
     },

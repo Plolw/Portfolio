@@ -19,7 +19,7 @@ const Projects = () => {
         <div className='flex flex-col'>
             <SectionTitle text={"Projects"} />
             <div
-                className='flex flex-col lg:grid grid-cols-8 gap-5 lg:gap-8 lg:p-4 max-h-[80vh] 3xl:max-h-[76vh] overflow-y-auto lg:hide-scrollbar lg:px-16 2xl:px-20 3xl:px-10'
+                className='flex flex-col lg:grid grid-cols-8 gap-5 lg:gap-8 lg:p-4 lg:max-h-[80vh] 3xl:max-h-[76vh] overflow-y-auto lg:hide-scrollbar lg:px-16 2xl:px-20 3xl:px-10'
                 onMouseMove={moveCursor}
                 onMouseEnter={() => { setCursorIn(true) }}
                 onMouseLeave={() => { setCursorIn(false) }}
