@@ -23,7 +23,12 @@ const Email = () => {
         setIsSending(true);
 
         emailjs
-            .sendForm('service_0hpk5en', 'template_sq00wrk', form.current, '26qC0gh5GAZL93s52')
+            .sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
             .then(
                 () => {
                     console.log('SUCCESS!');
@@ -35,6 +40,9 @@ const Email = () => {
                     }, 60000));
                 },
                 (error) => {
+                    console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
+                    console.log(import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+                    console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
                     console.log('FAILED...', error.text);
                     setIsSending(false);
                 },
@@ -63,14 +71,17 @@ const Email = () => {
                 <textarea name="message" required disabled={isDisabled} className={`h-16 lg:h-20 3xl:h-36 ${styles.formInputText}`} />
             </div>
             <p className='text-sm text-primary'>Or if you want to send an email directly: <a href="" ref={em} onClick={Copy} title='Click to copy!'>polpolortiz@gmail.com</a></p>
-            <motion.button
-                type="submit"
-                disabled={isDisabled || isSending}
-                className={`self-center md:self-end px-20 ${styles.normalButton}`}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.95, rotate: "5deg", background: "#007bff" }}
-                transition={{ duration: 0.1 }}
-            >{isSending ? "Sending..." : isDisabled ? "Wait 1 minute..." : "Send"}</motion.button>
+            <div className='self-end flex flex-row gap-3'>
+                {isDisabled && <p className='text-sm self-center text-gray-400'>Email sent! Wait 1 minute to send another one.</p>}
+                <motion.button
+                    type="submit"
+                    disabled={isDisabled || isSending}
+                    className={`self-center md:self-end px-20 ${styles.normalButton}`}
+                    whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.95, rotate: "5deg", background: "#007bff" }}
+                    transition={{ duration: 0.1 }}
+                >{isSending ? "Sending..." : isDisabled ? "Wait 1 minute..." : "Send"}</motion.button>
+            </div>
         </motion.form>
     );
 };
