@@ -31,8 +31,8 @@ export const projects = [
         browsers work with dinamic and static websites, CRUD opeartions and user management.`, githubLink: "", websiteLink: ""
     },
     {
-        url: "ProjectsImages/Trello/trello1.PNG", name: "Trello-like website", desc: "Just like Trello, it allows you to create projects and manage tasks inside of them with your colleagues.", cols: 3,
-        imgPrefix: "/ProjectsImages/Trello/trello", stack: "DjangoRestFramework, Angular, Tailwind, SQLite3 (for testing), MySQL (for deployment), Chart.js", learnings: `This was my first freelance work for a client.
+        url: "ProjectsImages/Trello/trel1.PNG", name: "Trello-like website", desc: "Just like Trello, it allows you to create projects and manage tasks inside of them with your colleagues.", cols: 3,
+        imgPrefix: "/ProjectsImages/Trello/trel", stack: "DjangoRestFramework, Angular, Tailwind, SQLite3 (for testing), MySQL (for deployment), Chart.js", learnings: `This was my first freelance work for a client.
         I learned a lot about comunication with clients and setting up a project based on my client's needs. On a technichal side I learned Angular, more advanced user management (cookies, localStorage, sessions, etc)
         , agile methodologies and advanced data visualization (creating custom graphs without frameworks, special mention to a Gantt graph).`, githubLink: "", websiteLink: ""
     },
@@ -73,7 +73,7 @@ export const times = [
         title: "Statistics", prefix: "CubeMTLS/cube4", imgUrl: "AboutMeImages/uab.jpg", dateS: new Date(2023, 8, 12), dateF: new Date(2000, 0, 1), desc: `Started an Applied Statistics college degree at UAB 
         (Universitat Autònoma de Catalunya). Here I am learning mathematics, data science and programing. Currenly still studying this degree.` },
     {
-        title: "Freelance", prefix: "CubeMTLS/cube5", imgUrl: "AboutMeImages/webpagetr.png", dateS: new Date(2024, 2, 4), dateF: new Date(2024, 3, 2), desc: `Made my first freelance website for a client. It's a 
+        title: "Freelance", prefix: "CubeMTLS/cube5", imgUrl: "ProjectsImages/Trello/trel1.PNG", dateS: new Date(2024, 2, 4), dateF: new Date(2024, 3, 2), desc: `Made my first freelance website for a client. It's a 
         very similar concept to Trello, a project management app. It incorporates agile methodologies and data visualization for users to see their advancement on their projects. Made 
         with DRF as a backend api connected to a MySQL local database, with an Angular frontend.` }
 ];
