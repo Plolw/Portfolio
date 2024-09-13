@@ -5,7 +5,7 @@ import { onLoadVariant } from '../motion';
 function HomeTitle() {
 
     return (
-        <motion.div
+        <motion.h1
             className='text-2xl md:text-4xl lg:text-5xl 3xl:text-6xl w-full lg:w-3/5 relative z-10 2xl:ml-20'
             variants={onLoadVariant(-50)}
             initial="hidden"
@@ -43,7 +43,7 @@ function HomeTitle() {
                 />
             </span>
             developer!
-        </motion.div>
+        </motion.h1>
     )
 }
 
