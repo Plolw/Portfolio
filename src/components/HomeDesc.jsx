@@ -45,9 +45,9 @@ const HomeDesc = () => {
                     initial="hidden"
                     whileInView="show"
                 >
-                    Hi, I have a passion for <span className='text-primary'>technology</span>, <span className='text-primary'>science</span> and <span className='text-primary'>art</span>.
-                    This has lead to years of practicing and studying in these fields.
-                    More specifically web and software development, videogame design and development, data science and math.
+                    I'm passionate about creating <span className='text-primary'>technology-driven solutions</span> that blend creativity and precision.
+                    With years of experience in web and software development, I bring a unique mix of skills to deliver innovative,
+                    user-centered designs and efficient, scalable applications that help your business or personal projects stand out.
                 </motion.div>
                 <motion.div
                     className='mt-10 2xl:mt-20 self-center lg:self-start'

@@ -11,7 +11,8 @@ const Email = () => {
     const [isDisabled, setIsDisabled] = useState(false);
     const [timer, setTimer] = useState(null);
 
-    function Copy() {
+    function Copy(e) {
+        e.preventDefault();
         navigator.clipboard.writeText(em.current.innerText);
     }
 

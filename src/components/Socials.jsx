@@ -6,6 +6,11 @@ import { motion } from 'framer-motion';
 import { onLoadVariant } from '../motion';
 
 const Socials = () => {
+    function Copy(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText("polw");
+    }
+
     return (
         <motion.div className='flex flex-col gap-2 lg:gap-4 3xl:gap-6' variants={onLoadVariant(50)} initial="hidden" whileInView="show">
             <p className='self-center text-2xl uppercase border-b-4 border-primary px-20'>My Socials</p>
@@ -32,7 +37,7 @@ const Socials = () => {
                     transition={{ duration: 0.3 }}
                     className='transition hover:bg-primary p-2 rounded-md'
                 >
-                    <a href=''><FaDiscord className='size-8 md:size-10 2xl:size-14 3xl:size-16' /></a>
+                    <a href='' title='Copy my username!' onClick={Copy}><FaDiscord className='size-8 md:size-10 2xl:size-14 3xl:size-16' /></a>
                 </motion.div>
             </div>
         </motion.div>

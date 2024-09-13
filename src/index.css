@@ -69,7 +69,6 @@ section {
     section {
         height: auto;
         /* Allow content to flow naturally */
-        overflow-y: auto;
         /* Enable scrolling within the section */
         scroll-snap-align: none;
         /* Disable snap alignment */

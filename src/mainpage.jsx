@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 
-const MainPage = ( {homeRef, skillsRef, projectsRef, aboutRef, contactRef} ) => {
+const MainPage = ({ homeRef, skillsRef, projectsRef, aboutRef, contactRef }) => {
     return (
         <div className="relative z-10 w-full">
             <section id="home" ref={homeRef}>
@@ -17,15 +17,15 @@ const MainPage = ( {homeRef, skillsRef, projectsRef, aboutRef, contactRef} ) => 
             <section id="skills" ref={skillsRef} className='3xl:mt-10'>
                 <Skills />
             </section>
-            <section id="projects" ref={projectsRef} className='3xl:mt-10'>
+            <section id="projects" ref={projectsRef} className='3xl:mt-10 overflow-y-auto'>
                 <Projects />
             </section>
             <section id="about" ref={aboutRef}>
                 <AboutMe />
             </section>
             <section id="contact" ref={contactRef}>
-               <Contact />                
-               </section>
+                <Contact />
+            </section>
         </div>
     )
 }
