@@ -55,7 +55,7 @@ const Email = () => {
     }, [timer]);
 
     return (
-        <motion.form ref={form} onSubmit={sendEmail} className='flex flex-col gap-4 3xl:gap-8 p-3 md:p-6 2xl:p-10 rounded-sm bg-opacity-20 md:w-3/5 border-4 lg:border-8 border-primary'
+        <motion.form ref={form} onSubmit={sendEmail} className='flex flex-col gap-4 3xl:gap-8 p-3 md:p-6 2xl:p-10 rounded-sm bg-opacity-20 md:w-3/5 lg:w-2/5 border-4 lg:border-8 border-primary'
             variants={onLoadVariant(50, 0.5)} initial="hidden" whileInView="show"
         >
             <p className='text-2xl 2xl:text-3xl 3xl:text-4xl'>Send me a <span className='text-primary'>message!</span></p>
