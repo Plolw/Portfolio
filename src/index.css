@@ -77,10 +77,10 @@ section {
 
 @media (max-width: 1536px) {
     #root {
-        scroll-padding-top: 4rem;
+        scroll-padding-top: 0rem;
     }
 
     section {
-        height: calc(100vh - 4rem);
+        height: calc(110vh);
     }
 }

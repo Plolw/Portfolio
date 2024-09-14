@@ -11,10 +11,10 @@ import { Canvas } from '@react-three/fiber';
 const MainPage = ({ homeRef, skillsRef, projectsRef, aboutRef, contactRef }) => {
     return (
         <div className="relative z-10 w-full">
-            <section id="home" ref={homeRef}>
+            <section id="home" ref={homeRef} className='pt-10 md:pt-0'>
                 <Home />
             </section>
-            <section id="skills" ref={skillsRef} className='3xl:mt-10'>
+            <section id="skills" ref={skillsRef} className='mt-20'>
                 <Skills />
             </section>
             <section id="projects" ref={projectsRef} className='3xl:mt-10 overflow-y-auto'>
